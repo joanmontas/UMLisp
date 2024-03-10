@@ -1,0 +1,147 @@
+cabal-version:      3.0
+
+name:               UMLisp
+
+
+version:            0.1.0.0
+
+
+--license:            License
+
+author:             Joan Montas
+
+maintainer:         joanmontas1@gmail.com
+
+-- copyright:
+category:           Language
+build-type:         Simple
+
+extra-doc-files:    README.md, CHANGELOG.md
+
+
+common warnings
+    ghc-options: -Wincomplete-patterns
+
+library
+    --import:           warnings
+    --default-extensions:       EmptyDataDeriving
+    exposed-modules:  Lexer, Parser, Evaluater, Repl
+    build-depends:    base >=4.16 && <5,
+                      ansi-terminal >= 1.0,
+                      containers
+
+
+    hs-source-dirs:   src
+    --default-language: Haskell2010
+
+executable UMLisp
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:    base >=4.16 && <5,
+                      containers,
+                      UMLisp
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+test-suite Lexer-test
+    -- Import common warning flags.
+    import:           warnings
+
+    -- Base language which the package is written in.
+    default-language: Haskell2010
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+
+    -- The interface type and version of the test suite.
+    type:             exitcode-stdio-1.0
+
+    -- Directories containing source files.
+    hs-source-dirs:   test
+
+    -- The entrypoint to the test suite.
+    main-is:          LexerTest.hs
+
+    -- Test dependencies.
+    build-depends:
+                  containers,
+                  QuickCheck,
+                  base >=4.16 && <5,
+                  UMLisp,
+                  hspec,
+                  hspec-expectations,
+                  HUnit,
+
+    default-language: Haskell2010
+
+test-suite Parser-test
+    -- Import common warning flags.
+    import:           warnings
+
+    -- Base language which the package is written in.
+    default-language: Haskell2010
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+
+    -- The interface type and version of the test suite.
+    type:             exitcode-stdio-1.0
+
+    -- Directories containing source files.
+    hs-source-dirs:   test
+
+    -- The entrypoint to the test suite.
+    main-is:          ParserTest.hs
+
+    -- Test dependencies.
+    build-depends:
+                  containers,
+                  QuickCheck,
+                  base >=4.16 && <5,
+                  UMLisp,
+                  hspec,
+                  hspec-expectations,
+                  HUnit,
+
+    default-language: Haskell2010
+
+test-suite Evaluater-test
+    -- Import common warning flags.
+    import:           warnings
+
+    -- Base language which the package is written in.
+    default-language: Haskell2010
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+
+    -- The interface type and version of the test suite.
+    type:             exitcode-stdio-1.0
+
+    -- Directories containing source files.
+    hs-source-dirs:   test
+
+    -- The entrypoint to the test suite.
+    main-is:          EvaluaterTest.hs
+
+    -- Test dependencies.
+    build-depends:
+                  containers,
+                  QuickCheck,
+                  base >=4.16 && <5,
+                  UMLisp,
+                  hspec,
+                  hspec-expectations,
+                  HUnit,
+
+    default-language: Haskell2010
+    
