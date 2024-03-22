@@ -14,7 +14,8 @@ However this is definitely not the way to go (... fun none the less).
 
 Cheers!
 - Joan Montas
-
+  
+# Features
 # List
 (list 1 2 "asd" 3 )
 ###
@@ -50,7 +51,7 @@ cabal run UMLisp
 cabal repl or cabal repl src/Parser.hs
 # Unit Test
 cabal test
-# Features
+###
 Please look at the /test/EvaluaterTest.hs as reference
 
 ## Future work
