@@ -4,7 +4,7 @@ Simple Language With Lisp-like syntax.
 
 ## Description
 
-This is a very simple language written in Haskell.
+This is a Functional Programming Language written in Haskell.
 It contains Lisp-Like syntax. I had lots of fun implementing it; Learnt alot during the way.
 Not bad for a day's work In my opinion.
 
