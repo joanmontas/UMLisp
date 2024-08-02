@@ -79,6 +79,9 @@ Please look at the /test/EvaluaterTest.hs as reference
 
 Joan Montas
 
+## Version
+        v1.0.0
+
 ## License
 
     UMLisp  Copyright (C) 2023  Joan Montas
