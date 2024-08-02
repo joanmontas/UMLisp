@@ -26,7 +26,7 @@ library
     --import:           warnings
     --default-extensions:       EmptyDataDeriving
     exposed-modules:  Lexer, Parser, Evaluater, Repl
-    build-depends:    base >=4.16 && <5,
+    build-depends:    base >=4.0 && <5,
                       ansi-terminal >= 1.0,
                       containers
 
@@ -37,7 +37,7 @@ library
 executable UMLisp
     import:           warnings
     main-is:          Main.hs
-    build-depends:    base >=4.16 && <5,
+    build-depends:    base >=4.0 && <5,
                       containers,
                       UMLisp
     hs-source-dirs:   app
@@ -69,7 +69,7 @@ test-suite Lexer-test
     build-depends:
                   containers,
                   QuickCheck,
-                  base >=4.16 && <5,
+                  base >=4.0 && <5,
                   UMLisp,
                   hspec,
                   hspec-expectations,
@@ -103,7 +103,7 @@ test-suite Parser-test
     build-depends:
                   containers,
                   QuickCheck,
-                  base >=4.16 && <5,
+                  base >=4.0 && <5,
                   UMLisp,
                   hspec,
                   hspec-expectations,
@@ -137,7 +137,7 @@ test-suite Evaluater-test
     build-depends:
                   containers,
                   QuickCheck,
-                  base >=4.16 && <5,
+                  base >=4.0 && <5,
                   UMLisp,
                   hspec,
                   hspec-expectations,
