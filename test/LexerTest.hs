@@ -1,6 +1,7 @@
 -- test/LexerTest.hs
-import Test.Hspec
+
 import Lexer
+import Test.Hspec
 
 main :: IO ()
 main = hspec $ do
@@ -34,15 +35,15 @@ main = hspec $ do
       let actualSomeString = [StringToken "someString"]
       (tokenize inputSomeString emptyListOfToken) `shouldBe` actualSomeString
     it "should tokenize '(' as a LParenToken" $ do
-      let inputLparenToken= "("
+      let inputLparenToken = "("
       let actualLparenToken = [LParenToken '(']
       (tokenize inputLparenToken emptyListOfToken) `shouldBe` actualLparenToken
     it "should tokenize ')' as a TParenToken" $ do
-      let inputRparenToken= ")"
+      let inputRparenToken = ")"
       let actualRparenToken = [RParenToken ')']
       (tokenize inputRparenToken emptyListOfToken) `shouldBe` actualRparenToken
     it "should tokenize ')' as a TParenToken" $ do
-      let inputRparenToken= ")"
+      let inputRparenToken = ")"
       let actualRparenToken = [RParenToken ')']
       (tokenize inputRparenToken emptyListOfToken) `shouldBe` actualRparenToken
     it "should tokenize '+' as an OperatorToken" $ do
@@ -77,19 +78,19 @@ main = hspec $ do
   describe "Lexer Single Token Error" $ do
     it "should tokenize '&' as \"Lexer Error: Unkown Token\"" $ do
       let inputAsterisk = "&"
-      let actualAsteriskUnkownTokenError =  [LexErrorToken "Lexer Error: Unkown Token"]
+      let actualAsteriskUnkownTokenError = [LexErrorToken "Lexer Error: Unkown Token"]
       (tokenize inputAsterisk emptyListOfToken) `shouldBe` actualAsteriskUnkownTokenError
     it "should tokenize \"Look, I am not closing the string as \"Lexer-Error: Did not close String\"" $ do
       let inputUnclosedString = "\"Look, I am not closing the string"
-      let actualUnclosedString =  [LexErrorToken "Lexer-Error: Did not close String"]
+      let actualUnclosedString = [LexErrorToken "Lexer-Error: Did not close String"]
       (tokenize inputUnclosedString emptyListOfToken) `shouldBe` actualUnclosedString
     it "should tokenize 'Look, I forgot to open the string' as \"LexErrorToken \"Lexer Error: Unkown Token\"" $ do
       let inputUnOpenString = "Look, I forgot to open the string\""
-      let actualUnOpenString =  [LexErrorToken "Lexer Error: Unkown Token"]
+      let actualUnOpenString = [LexErrorToken "Lexer Error: Unkown Token"]
       (tokenize inputUnOpenString emptyListOfToken) `shouldBe` actualUnOpenString
     it "should tokenize 'Look I forgot to open the string' as \"Lexer-Error: Did not close String\"" $ do
       let inputUnOpenString = "Look I forgot to open the string\""
-      let actualUnOpenString =  [LexErrorToken "Lexer-Error: Did not close String"]
+      let actualUnOpenString = [LexErrorToken "Lexer-Error: Did not close String"]
       (tokenize inputUnOpenString emptyListOfToken) `shouldBe` actualUnOpenString
 
   describe "Lexer Eat White Space" $ do
